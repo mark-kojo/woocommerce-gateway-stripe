@@ -588,8 +588,9 @@ jQuery( function( $ ) {
 				}
 			};
 
-			$.post( {
-				url: wc_stripe_form.getAjaxURL( 'create_setup_intent'),
+			$.ajax({
+        type: "POST",
+        url: wc_stripe_form.getAjaxURL( 'create_setup_intent'),
 				dataType: 'json',
 				data: {
 					stripe_source_id: response.source.id,
